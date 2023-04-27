@@ -1,3 +1,7 @@
+
+# 基本資訊
+## [部屬網址](https://happybookproject-ve77y6hkra-de.a.run.app)
+
 # Cloud Run Hello World with Cloud Code
 
 "Hello World" is a [Cloud Run](https://cloud.google.com/run/docs) application that renders a simple webpage.
