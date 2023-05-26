@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>樂書網 </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="css/animate.css">
+
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.min.css">
+
+  <link rel="stylesheet" href="css/flaticon.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <script>
+    opAdd = true
+    opEdit = true
+    opSearch = true
+    opDel = false
+    window.onload = function () {
+      $("#addProInput").hide();
+      $("#editProInput").hide();
+      $("#searchProInput").hide();
+      $("#delOuput7").hide();
+      $("#delOuput8").hide();
+    }
+    function searchDataShow(){
+      $("#delOuput1").hide();
+      $("#delOuput2").hide();
+      $("#delOuput3").hide();
+      $("#delOuput4").hide();
+      $("#delOuput5").hide();
+      $("#delOuput6").hide();
+      $("#delOuput7").hide();
+      $("#delOuput8").show();
+      alert('搜尋成功')
+    }
+    function addSuc(){
+      $("#delOuput7").show();
+      alert('新增成功')
+    }
+    function editSuc(){
+      $("#delOuput7").hide();
+      $("#delOuput8").show();
+      alert('編輯成功')
+
+    }
+    function addData() {
+      if (opAdd) {
+        $("#addProInput").show();
+      } else {
+        $("#addProInput").hide();
+      }
+      opAdd = !opAdd;
+    }
+    function editData() {
+      if (opEdit) {
+        $("#editProInput").show();
+      } else {
+        $("#editProInput").hide();
+      }
+      opAdd = !opAdd;
+    }
+    function searchData() {
+      if (opSearch) {
+        $("#searchProInput").show();
+      } else {
+        $("#searchProInput").hide();
+      }
+      opSearch = !opSearch;
+    }
+
+    function delData() {
+      if (opDel) {
+        $("#delOuput1").show();
+        $("#delOuput2").show();
+      } else {
+        $("#delOuput1").hide();
+        $("#delOuput2").hide();
+      }
+      alert('刪除完成')
+      opDel = !opDel;
+    }
+
+
+
+    // $("#addPro").click(searchPro)
+    // function searchPro(){
+    //   alert('search')
+    //   // if(op){
+    //   //   $("#searchPro").show();
+    //   // }else{
+    //   //   $("#searchPro").hide();
+    //   // }
+    //   // op=!op
+    // }
+  </script>
+
+  <!-- END nav -->
+
+  <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_5.jpg');"
+    data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row no-gutters slider-text align-items-center justify-content-center">
+        <div class="col-md-9   mb-0 text-center">
+          <p class="breadcrumbs mb-0"><span class="mr-2"><a href="index.html">首頁 <i
+                  class="fa fa-chevron-right"></i></a></span> <span class="mr-2"><a href="index.html">管理系統<i
+                  class="fa fa-chevron-right"></i></a></span> <span>商品管理<i
+                class="fa fa-chevron-right"></i></span></p>
+          <h1 class="mb-0 bread">管理系統</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <div class="row justify-content-center" role="group" aria-label="Basic example">
+
+        <button type="button" class="btn btn-secondary" onclick="searchData()">產品列表</button>
+        <button type="button" class="btn btn-secondary" onclick="addData()">新增產品</button>
+        <button type="button" class="btn btn-secondary" onclick="editData()">編輯產品</button>
+        <button type="button" class="btn btn-secondary" onclick="delData()">刪除產品</button>
+        <div class="input-group mb-3" id="addProInput">
+          <input type="text" class="form-control" placeholder="ID" aria-label="ID" aria-describedby="button-addon2">
+          <input type="text" class="form-control" placeholder="商品名稱" aria-label="名稱" aria-describedby="button-addon2">
+          <input type="text" class="form-control" placeholder="價格" aria-label="名稱" aria-describedby="button-addon2">
+          <input type="text" class="form-control" placeholder="敘述" aria-label="名稱" aria-describedby="button-addon2">
+          <input type="text" class="form-control" placeholder="數量" aria-label="名稱" aria-describedby="button-addon2">
+          <input type="text" class="form-control" placeholder="狀態" aria-label="名稱" aria-describedby="button-addon2">
+
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="addSuc()">新增資料</button>
+          </div>
+        </div>
+        <div class="input-group mb-3" id="editProInput">
+          <input type="text" class="form-control" placeholder="ID" aria-label="ID" aria-describedby="button-addon2">
+          <input type="text" class="form-control" placeholder="商品名稱" aria-label="名稱" aria-describedby="button-addon2">
+          <input type="text" class="form-control" placeholder="價格" aria-label="名稱" aria-describedby="button-addon2">
+          <input type="text" class="form-control" placeholder="敘述" aria-label="名稱" aria-describedby="button-addon2">
+          <input type="text" class="form-control" placeholder="數量" aria-label="名稱" aria-describedby="button-addon2">
+          <input type="text" class="form-control" placeholder="狀態" aria-label="名稱" aria-describedby="button-addon2">
+
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="editSuc()">編輯資料</button>
+          </div>
+        </div>
+        <div class="input-group mb-3" id="searchProInput">
+          <h4>產品列表</h4>
+          <input type="text" class="form-control" placeholder="輸入資料" aria-label="Recipient's username"
+            aria-describedby="button-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="searchDataShow()">尋找</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">ID</th>
+              <th scope="col">產品名稱</th>
+              <th scope="col">價錢</th>
+              <th scope="col">描述</th>
+              <th scope="col">數量</th>
+              <th scope="col">狀態</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr id="delOuput1">
+              <th scope="row">
+                <div class="form-check">
+                  <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1"
+                    aria-label="...">
+                </div>
+              </th>
+              <td>0001</td>
+              <td>1984</td>
+              <td>330</td>
+              <td>英國作家喬治·奧威爾的小說，描述了一個極權主義社會的生活</td>
+              <td>2</td>
+              <td>上架中</td>
+            </tr>
+            <tr id="delOuput2">
+              <th scope="row">
+                <div class="form-check">
+                  <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1"
+                    aria-label="...">
+                </div>
+              </th>
+              <td>0002</td>
+              <td>麥田捕手</td>
+              <td>243</td>
+              <td>美國作家J.D. Salinger的小說，講述了一個叛逆的青少年Holden Caulfield的故事。</td>
+              <td>22</td>
+              <td>上架中</td>
+            </tr>
+
+            <tr id="delOuput3">
+              <th scope="row">
+                <div class="form-check">
+                  <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1"
+                    aria-label="...">
+                </div>
+              </th>
+              <td>0003</td>
+              <td>傲慢與偏見</td>
+              <td>238</td>
+              <td>英國作家Jane Austen的小說，講述了一個年輕女子Elizabeth Bennet和她的家人之間的愛情故事。</td>
+              <td>10</td>
+              <td>上架中</td>
+            </tr>
+            <tr id="delOuput4">
+              <th scope="row">
+                <div class="form-check">
+                  <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1"
+                    aria-label="...">
+                </div>
+              </th>
+              <td>0004</td>
+              <td>東方快車謀殺案</td>
+              <td>443</td>
+              <td>英國作家Agatha Christie的小說，講述了一個在火車上發生的謀殺案。</td>
+              <td>0</td>
+              <td>沒有存貨</td>
+            </tr>
+            <tr id="delOuput5">
+              <th scope="row">
+                <div class="form-check">
+                  <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1"
+                    aria-label="...">
+                </div>
+              </th>
+              <td>0005</td>
+              <td>時間機器</td>
+              <td>443</td>
+              <td>英國作家H.G. Wells的小說，描述了一個科幻故事，關於一個時間旅行者穿越不同時代的冒險。</td>
+              <td>12</td>
+              <td>上架中</td>
+            </tr>
+            <tr id="delOuput6">
+              <th scope="row">
+                <div class="form-check">
+                  <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1"
+                    aria-label="...">
+                </div>
+              </th>
+              <td>0006</td>
+              <td>飄</td>
+              <td>453</td>
+              <td>美國作家Margaret Mitchell的小說，講述了南北戰爭期間南方女性Scarlett O’Hara的故事。</td>
+              <td>21</td>
+              <td>上架中</td>
+            </tr>
+            <tr id="delOuput7">
+              <th scope="row">
+                <div class="form-check">
+                  <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1"
+                    aria-label="...">
+                </div>
+              </th>
+              <td>0007</td>
+              <td>老人與海</td>
+              <td>461</td>
+              <td>美國作家Ernest Hemingway的小說，講述了一位老漁夫Santiago和他捕魚冒險的故事。</td>
+              <td>18</td>
+              <td>上架中</td>
+            </tr>
+            <tr id="delOuput8">
+              <th scope="row">
+                <div class="form-check">
+                  <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1"
+                    aria-label="...">
+                </div>
+              </th>
+              <td>0007</td>
+              <td>老人與海</td>
+              <td>461</td>
+              <td>美國作家Ernest Hemingway的小說，講述了一位老漁夫Santiago和他捕魚冒險的故事。</td>
+              <td>0</td>
+              <td>下架中</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+      <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+        stroke="#F96D00" /></svg></div>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false">
+  </script>
+  <script src="js/google-map.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
